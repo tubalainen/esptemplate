@@ -66,12 +66,11 @@ binary_sensor:
     name: "${friendly_name} Input"
     pin:
       number: GPIO5
-    on_press:
+    on_press: # used with spring loaded switches
       - switch.toggle: relay
-    #on_press:
-    #  - switch.turn_on: relay
-    #on_release:
+    #on_release: # used with spring loaded switches (inverted)
     #  - switch.turn_off: relay
-
+    #on_state: # used with normal "toggle" switches
+    #  - switch.toggle: relay
 status_led:
   pin: GPIO0
